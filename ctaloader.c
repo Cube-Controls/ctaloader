@@ -250,7 +250,8 @@ uint16 BootloadStringImage(const char *bootloadImagePtr[], unsigned int lineCoun
 	lineLen = strlen(bootloadImagePtr[lineCntr]);
 	
 	/* print progress line */
-	printf("[INFO] Write %d line from %d lines.\n", lineCntr, lineCount);
+	printf("[INFO] Write line %d from %d lines.", lineCntr, lineCount);
+	fflush (stdout);
   
 	/* Parse the first line(header) of cyacd file to extract 
 	   siliconID, siliconRev and packetChkSumType */
@@ -293,10 +294,10 @@ uint16 BootloadStringImage(const char *bootloadImagePtr[], unsigned int lineCoun
 			lineCntr++;
 	
 			/* print progress line */
-			printf("\b");
-			printf("\r");
-			printf("[INFO] Write line %d from %d lines.\n", lineCntr, lineCount);
+			printf("\r[INFO] Write line %d from %d lines.", lineCntr, lineCount);
+			fflush (stdout);
 		}
+		  printf("\n");
 		  /* End Bootloader Operation */
 		CyBtldr_EndBootloadOperation();
 	}

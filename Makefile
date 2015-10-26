@@ -9,4 +9,4 @@ ctaloader: $(OBJ)
 	gcc -Wall -g -o $@ $+
 
 clean:
-	-rm *.o xtaloader 
+	-rm *.o ctaloader 
